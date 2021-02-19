@@ -22,40 +22,39 @@ public class Rabbit {
 	private static final int MOUTH_Y = HEAD_DIMENSION/10 * 7;
 	//Ears for rabbit
 	private static final int LEFT_EAR_X = HEAD_DIMENSION/6;
-	private static final int LEFT_EAR_Y = HEAD_DIMENSION * 2 / 5;
+	private static final int EAR_Y = HEAD_DIMENSION * 2 / 5;
 	private static final int EAR_SEPARATION = HEAD_DIMENSION * 6 / 10;
 	private static final int EAR_WIDTH = 20;
 	private static final int EAR_HEIGHT = 80;
 	
 	// draw will render the Cat on the Graphics object
-	public void draw(Graphics g, int catX, int catY)
+	public void draw(Graphics g, int rabX, int rabY)
 	{
 		Graphics2D g2 = (Graphics2D) g;
-		int x=catX;
-		int y=catY;
+		int x=rabX;
+		int y=rabY;
 		// Draw the head
 		g2.setColor(Color.white);
 		g2.fillOval(x, y, HEAD_DIMENSION, HEAD_DIMENSION);
 		// Draw the eyes
 		g2.setColor(Color.yellow);
-		x = catX + EYE_X; 
-		y = catY + EYE_Y;
+		x = rabX + EYE_X; 
+		y = rabY + EYE_Y;
 		g2.fillOval(x, y, EYE_WIDTH, EYE_HEIGHT);
 		x += EYE_SEPARATION;
 		g2.fillOval(x, y, EYE_WIDTH, EYE_HEIGHT);
 		// Draw the mouth
 		g2.setColor(Color.pink);
-		x = catX + MOUTH_X;
-		y = catY + MOUTH_Y;
+		x = rabX + MOUTH_X;
+		y = rabY + MOUTH_Y;
 		g2.fillOval(x, y, MOUTH_WIDTH, MOUTH_HEIGHT);	
 		//Draw Ears
 		g2.setColor(Color.white);
-		x = catX + LEFT_EAR_X;
-		y = catY - LEFT_EAR_Y;
+		x = rabX + LEFT_EAR_X;
+		y = rabY - EAR_Y;
 		g2.fillArc(x, y, EAR_WIDTH, EAR_HEIGHT, 0, 180);
-		g2.setColor(Color.white);
-		x = catX + EAR_SEPARATION;
-		y = catY - LEFT_EAR_Y;
+		x = rabX + EAR_SEPARATION;
+		y = rabY - EAR_Y;
 		g2.fillArc(x, y, EAR_WIDTH, EAR_HEIGHT, 0, 180);
 	}
 }
