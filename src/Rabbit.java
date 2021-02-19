@@ -22,8 +22,8 @@ public class Rabbit {
 	private static final int MOUTH_Y = HEAD_DIMENSION/10 * 7;
 	//Ears for rabbit
 	private static final int LEFT_EAR_X = HEAD_DIMENSION/6;
-	private static final int LEFT_EAR_Y = HEAD_DIMENSION* 2 / 5;
-	private static final int EAR_SEPARATION = 2 * HEAD_DIMENSION / 3;
+	private static final int LEFT_EAR_Y = HEAD_DIMENSION * 2 / 5;
+	private static final int EAR_SEPARATION = HEAD_DIMENSION * 6 / 10;
 	private static final int EAR_WIDTH = 20;
 	private static final int EAR_HEIGHT = 80;
 	
@@ -48,9 +48,13 @@ public class Rabbit {
 		x = catX + MOUTH_X;
 		y = catY + MOUTH_Y;
 		g2.fillOval(x, y, MOUTH_WIDTH, MOUTH_HEIGHT);	
-		
+		//Draw Ears
 		g2.setColor(Color.white);
 		x = catX + LEFT_EAR_X;
+		y = catY - LEFT_EAR_Y;
+		g2.fillArc(x, y, EAR_WIDTH, EAR_HEIGHT, 0, 180);
+		g2.setColor(Color.white);
+		x = catX + EAR_SEPARATION;
 		y = catY - LEFT_EAR_Y;
 		g2.fillArc(x, y, EAR_WIDTH, EAR_HEIGHT, 0, 180);
 	}
