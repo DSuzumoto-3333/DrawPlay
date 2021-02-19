@@ -49,7 +49,7 @@ public class Rabbit {
 		y = rabY + MOUTH_Y;
 		g2.fillOval(x, y, MOUTH_WIDTH, MOUTH_HEIGHT);	
 		//Draw Ears
-		g2.setColor(Color.white);
+		g2.setColor(Color.orange);
 		x = rabX + LEFT_EAR_X;
 		y = rabY - EAR_Y;
 		g2.fillArc(x, y, EAR_WIDTH, EAR_HEIGHT, 0, 180);
